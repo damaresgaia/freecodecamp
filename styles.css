@@ -1,0 +1,135 @@
+/* Animação que faz o elemento piscar, mudando a opacidade de 1 para 0.5 e voltando */
+@keyframes twinkle {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.5;}
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(ellipse at center, #0d1b2a 0%, #000814 80%);
+  color: #d0d6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Container principal do conteúdo, com fundo degradê e cantos arredondados */
+.container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #1e2a78, #3c4f76, #1e2a78);
+  border-radius: 20px;
+  padding: 40px 50px 60px 50px;
+  width: 360px;
+  box-shadow:
+    0 0 20px 3px rgba(94, 108, 255, 0.7),
+    0 10px 30px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 15px 0;
+  font-weight: 900;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  color: #c3c6f3;
+  text-shadow: 0 0 12px #8e9eff;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #a1a5c7;
+  margin-bottom: 25px;
+}
+
+/* Estilo do campo de input de texto */
+input#text-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 2px solid #9da7ff;
+  background: transparent;
+  color: #e2e6ff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-bottom: 30px;
+}
+
+/* Cor do placeholder (texto dentro do input antes de digitar) */
+input#text-input::placeholder {
+  color: #b0b7d9;
+}
+input#text-input:focus {
+  border-bottom-color: #6979f8;
+}
+
+button#check-btn {
+  background: linear-gradient(45deg, #7058ff, #3f42c8);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(93, 83, 255, 0.7);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+button#check-btn:hover {
+  background: linear-gradient(45deg, #3f42c8, #7058ff);
+  box-shadow: 0 6px 20px rgba(93, 83, 255, 1);
+}
+
+/* Área que mostra o resultado */
+#result {
+  margin-top: 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d4def8;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(30, 42, 120, 0.6);
+  box-shadow: 0 0 12px 2px rgba(94, 108, 255, 0.8);
+  min-height: 50px;
+}
+
+/* Caixa de informação extra */
+.info-box {
+  margin-top: 40px;
+  background: #102c44;
+  color: #a8c1d1;
+  border-radius: 15px;
+  padding: 20px 25px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: inset 0 0 20px rgba(64, 123, 255, 0.2);
+  font-style: italic;
+}
+
+/* Destacar palavras importantes na caixa info */
+.info-box strong {
+  color: #89aaff;
+}
+
+.info-box::before {
+  content: "💡";
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 400px) {
+  .container {
+    width: 90vw;
+    padding: 30px 20px 50px 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
